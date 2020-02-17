@@ -118,6 +118,7 @@ export default {
     align-content: center;
     text-align: center;
     line-height: 75px;
+    width:356px;
     flex-wrap: wrap;
     list-style: none;
     font-size: 16px;

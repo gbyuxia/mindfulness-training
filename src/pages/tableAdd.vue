@@ -3,16 +3,7 @@
         <h1 class="gameName">按公式计算</h1>
         <h2 class="level">第 {{level}} 关{{total}}次计算</h2>
         <p class="description">说明：按提示公式依序填入结果，大于等于10的数字减10。</p>
-        <div class="resultBox">
-            <span v-show="success>0">
-                答对
-                <strong style="color:coral">{{success}}</strong> 次
-            </span>
-            <span v-show="fail>0">
-                / 错
-                <strong style="color:peru">{{fail}}</strong>次
-            </span>
-        </div>
+  
         <div class="flex">
             <ul>
                 <li class="bt"></li>
@@ -97,6 +88,16 @@
             >{{answer}}</van-button>
             <van-button type="default" @click="init">刷新</van-button>
         </div>
+              <div class="resultBox">
+            <span v-show="success>0">
+                答对
+                <strong style="color:coral">{{level*2+1+success}}</strong> 次
+            </span>
+            <span v-show="fail>0">
+                / 错
+                <strong style="color:peru">{{fail}}</strong>次
+            </span>
+        </div>
     </div>
 </template>
 <script>
@@ -134,11 +135,12 @@ export default {
             this.col = 0;
             this.answer = '';
             this.success = 0;
-            this.fail = 0;
             this.level = this.level + 1;
             this.beginTime = new Date();
             if (this.level > 1) {
                 this.total = this.total + 2;
+            }else{                
+                 this.fail = 0;
             }
             this.timer = setInterval(this.timeUpdate, 1000);
         },
@@ -206,8 +208,8 @@ ul {
     border-left: 1px solid #999;
     li {
         width: 32px;
-        height: 50px;
-        line-height: 50px;
+        height: 40px;
+        line-height: 40px;
         border-bottom: 1px solid #999;
         border-right: 1px solid #999;
         text-align: center;
@@ -221,13 +223,13 @@ ul {
             border-top: 1px solid #999;
         }
         &.wild {
-            width: 70px;
+            width: 60px;
         }
         input {
-            width: 70px;
-            border: 50px;
+            width: 60px;
+            border: 40px;
             border: none;
-            line-height: 50px;
+            line-height: 40px;
             text-align: center;
             font-size: 20px;
         }
