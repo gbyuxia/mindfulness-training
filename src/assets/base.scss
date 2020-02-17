@@ -1,0 +1,70 @@
+@import 'reset';
+// 颜色定义规范
+$color-text-white: #fff;
+$color-text-gray: #333;
+$color-text-red: #ff5656;
+$color-text-gray-l: #999;
+$color-text-blue-l: #a2cbfa;
+$color-text-blue-green: #79cb8d;
+$color-border-gray: rgb(221, 221, 221);
+$color-border-red: #ff7070;
+$color-background-black-l: rgba(0, 0, 0, 0.4);
+$color-background-white-l: #fff;
+
+$color-background-green: rgb(121, 203, 141);
+$color-background-gray: rgb(219, 219, 219);
+//字体定义规范
+
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large-x: 20px;
+$font-size-large-mx: 24px;
+$font-size-large-xx: 36px;
+$header-height: 40px;
+//page
+$page-background-color: #f7f7f7;
+$page-header-height: 45px;
+
+.container{
+    padding: 10px;
+    font-size:$font-size-medium;
+    .gameName{
+        font-size: $font-size-large-x;
+        line-height: 2;
+        text-align: center;
+        margin: 10px auto;
+        background-color: $page-background-color;
+    }
+    .level{
+        font-size: $font-size-medium;
+        text-align: center;
+        margin: 5px;
+    }
+    .description{
+        text-align: left;
+        margin-bottom: 10px;
+        font-size:$font-size-small;
+        color: $color-text-gray-l;
+    }
+    .btnBox{
+        text-align: left;
+        height: 60px;
+    }
+    .resultBox{      
+        height: 40px;
+        line-height: 40px;
+        .result,.tempResult{        
+            font-size: 24px;
+            text-align: center;
+        }
+        .result{
+            color: $color-text-blue-l
+        }
+        
+    }
+    .tempResult{
+        color: $color-text-blue-green;
+        line-height: 40px;
+    }
+}
+
